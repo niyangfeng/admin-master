@@ -1,0 +1,36 @@
+.wrapper {
+  min-height: 54px;
+  display: flex;
+  margin-top: 24px;
+  .tag {
+    flex: 1;
+    text-align: center;
+    div {
+      display: inline-block;
+      margin-bottom: 0;
+      color: #2b303e;
+      font-weight: bolder;
+      font-size: 18px;
+      cursor: pointer;
+      div {
+        //width: 100%;
+        height: 3px;
+        margin-top: 12px;
+        background-color: #fe2c5a;
+        animation: strip 0.5s forwards;
+      }
+    }
+    .active {
+      color: #ff1001;
+    }
+  }
+}
+
+@keyframes strip {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

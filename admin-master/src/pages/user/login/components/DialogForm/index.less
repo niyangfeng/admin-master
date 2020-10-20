@@ -1,0 +1,195 @@
+.login_box {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  width: 380px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 11px;
+  box-shadow: 0px 0px 26px 0px rgba(236, 93, 55, 0.26);
+  background-size: cover;
+  transform: translate(-50%, -50%);
+  animation: login 0.5s;
+  .title {
+    color: #222;
+    font-size: 28px;
+    text-align: center;
+  }
+  .LoginK {
+    text-align: center;
+    padding: 40px 0;
+    img {
+      width: 169px;
+    }
+  }
+  .login_con {
+    min-height: 227px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    .form {
+      .input_mobile_box {
+        display: flex;
+        width: 316px;
+        height: 46px;
+        background-color: #F8F8F8;
+        .input_color {
+          width: 5px;
+          height: 100%;
+          background: #FF3743;
+        }
+        .input_img {
+          width: 57px;
+          height: 100%;
+          text-align: center;
+        }
+        .user_input {
+          flex: 1;
+          :global {
+            .ant-input {
+              background-color: #F8F8F8;
+              width: 100%;
+              height: 100%;
+              border: none;
+              border-radius: 0;
+            }
+            .ant-input:focus {
+              border: none;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+      .input_code_box {
+        display: flex;
+        width: 316px;
+        height: 46px;
+        .input_color {
+          width: 5px;
+          height: 100%;
+          background: #ac59ff;
+        }
+        .input_img {
+          width: 57px;
+          height: 100%;
+          text-align: center;
+        }
+        .code_input {
+          width: 134px;
+          height: 100%;
+          :global {
+            .ant-input {
+              width: 100%;
+              height: 100%;
+              border: none;
+              border-radius: 0;
+            }
+            .ant-input:focus {
+              border: none;
+              box-shadow: none;
+            }
+          }
+        }
+        :global {
+          .ant-btn-primary {
+            width: 106px;
+            height: 100%;
+            margin-left: auto;
+            color: #fe250b;
+            background-color: #fff;
+            border: 1px solid #fe2b11;
+            border-radius: 0;
+          }
+        }
+      }
+      .input_password_box {
+        margin-bottom: 20px;
+        display: flex;
+        width: 316px;
+        height: 46px;
+        background-color: #F8F8F8;
+        .input_color {
+          width: 5px;
+          height: 100%;
+          background: #ac59ff;
+        }
+        .input_img {
+          width: 57px;
+          height: 100%;
+          text-align: center;
+        }
+        .user_input {
+          flex: 1;
+          :global {
+            .ant-input {
+              background-color: #F8F8F8;
+              width: 100%;
+              height: 100%;
+              border: none;
+              border-radius: 0;
+            }
+            .ant-input:focus {
+              border: none;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+      .checkbox {
+        margin-top: -24px;
+        margin-bottom: 0;
+        text-align: right;
+        .select {
+          display: inline-block;
+          margin-left: 5px;
+        }
+        :global {
+          .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+          .ant-checkbox:hover .ant-checkbox-inner,
+          .ant-checkbox-input:focus + .ant-checkbox-inner {
+            border: 1px solid #ff5535 !important;
+          }
+          .ant-checkbox-checked .ant-checkbox-inner,
+          .ant-checkbox-indeterminate .ant-checkbox-inner {
+            background-color: #ff5535;
+            border: 1px solid #ff5535;
+          }
+          .ant-checkbox-checked::after {
+            border: 1px solid #ff5535;
+          }
+          //.ant-checkbox{
+          //  .ant-checkbox-inner{
+          //    background-color: #fff;
+          //    border: 1px solid #ff5535;
+          //  }
+          //}
+        }
+      }
+      .login {
+        width: 316px;
+        :global {
+          .ant-btn {
+            width: 100%;
+            height: 48px;
+            color: #fff;
+            font-size: 16px;
+            background-color: #ff5535;
+            border: none;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes login {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}

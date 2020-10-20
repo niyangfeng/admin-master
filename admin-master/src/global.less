@@ -1,0 +1,51 @@
+@import '~antd/es/style/themes/default.less';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+:global{
+    .ant-pro-sider-menu-sider.ant-layout-sider {max-width:220px!important; min-width:220px!important; width:220px!important;height:100vh;}
+    .ant-pro-sider-menu-sider.ant-layout-sider.ant-layout-sider-collapsed{max-width:80px!important;min-width:80px!important;width:80px!important;}
+    .ant-layout{height:100vh;}
+  }
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: PVCNAME-h5
+  namespace: NAMESPACE2
+spec:
+  replicas: NUM
+  template:
+    metadata:
+      labels:
+        app: PVCNAME-h5
+    spec:
+      containers:
+      - name: nginx
+        image: HARBOR/k8s/PVCNAME:BUILD_TAG
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: TZ
+            value: Asia/Shanghai
+        resources:
+          requests:
+            cpu: "CPU_MINm"
+            memory: "MEM_MINMi"
+          limits:
+            cpu: "CPU_MAXm"
+            memory: "MEM_MAXMi"
+
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: logs
+          mountPath: /etc/nginx/logs/
+      volumes:
+      - name: logs
+        persistentVolumeClaim:
+          claimName: PVCNAME-h5-pvc
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: PVCNAME-h5
+  namespace: NAMESPACE2
+  labels:
+    app: PVCNAME-h5
+spec:
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 37334
+    name: web
+  selector:
+    app: PVCNAME-h5
+    
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-PVCNAME
+  namespace: NAMESPACE2
+spec:
+  rules:
+  - host: H5NAME.kakahui.net
+    http:
+      paths:
+      - backend:
+          serviceName: PVCNAME-h5
+          servicePort: 80
+
+
